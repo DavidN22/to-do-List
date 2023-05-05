@@ -1,0 +1,31 @@
+#list1 .form-control {
+  border-color: transparent;
+}
+#list1 .form-control:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+#list1 .select-input.form-control[readonly]:not([disabled]) {
+  background-color: #fbfbfb;
+}
+.form-check-input {
+  height: 24px;
+  width: 24px;
+}
+
+.list-item-separator {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.list-group-item {
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+border: 0 solid #ccc;
+border-bottom-width: 1px;
+min-height: 70px;
+}
