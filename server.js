@@ -34,17 +34,16 @@ app.post('/todos', async (req, res) => {
   res.json(todo);
 });
 
-app.put('/todos/:id', async (req, res) => {
-  const todo = await Todo.findByIdAndUpdate(req.params.id, req.body, { new: true });
-  res.json(todo);
-});
-
 app.delete('/todosdelete', async (req, res) => {
   let id = req.body.id;
   await Todo.findByIdAndDelete(id);
   res.sendStatus(204);
 });
-
+app.put('/todos/update', async (req, res) => {
+  const { id, text, completed } = req.body;
+  await Todo.findByIdAndUpdate(id, {text:text,completed:completed});
+  res.sendStatus(204);
+});
 app.listen(3000, () => {
   console.log('Server started on port 3000');
 });
